@@ -13,7 +13,9 @@ MongoClient.connect('mongodb+srv://youwa65:ss3108@cluster0.pmisujn.mongodb.net/?
 
    db = client.db('MYDB') //나는 어디 데이터 폴더에 넣을꺼냐?
     
-   db.collection('123').insertOne({이름 : 'jhon', _id : 40},function(error ,res){
+   db.collection('123').insertOne({날짜 : "09/30", 제목 : "항해 99"},
+   {날짜 : "09/40", 제목 : "항해999"
+   },function(error ,res){
     console.log('저장완료!!')
    });
 
@@ -43,5 +45,10 @@ app.post('/add', (req,res) =>{
     res.send('전송완료!!')
     console.log(req.body.data)
     console.log(req.body.title)
-
+    db.collection('123').insertOne({날짜 : "09/30", 제목 : "항해 99"},
+   {날짜 : "09/40", 제목 : "항해999"
+   },function(error ,res){
+    console.log('저장완료!!')
+   }); 
 })
+
